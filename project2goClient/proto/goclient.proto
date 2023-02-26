@@ -1,0 +1,16 @@
+syntax = "proto3";
+package project2goclient;
+
+// protoc -I . proto/goclient.proto --go_out=plugins=grpc:.
+
+service GoClient {
+    rpc SayHello(request) returns(response) {};
+}
+
+message request {
+    string str = 1;
+}
+
+message response {
+    string str = 1;
+}

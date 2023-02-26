@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gcd-client-deployment
+  labels:
+    app: gcd-client
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gcd-client
+  template:
+    metadata:
+      labels:
+        app: gcd-client
+    spec:
+      containers:
+      - name: gcd-client-pod
+        image: pptp2-goclient-image
+        imagePullPolicy: Never
+        ports:
+          - containerPort: 50096
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name:  goclient-pptservice
+spec:
+  selector:
+    app:  gcd-client
+  type:  NodePort
+  ports:
+  - port:  7002
+    targetPort:  50096
+    nodePort: 30008

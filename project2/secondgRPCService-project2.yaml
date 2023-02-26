@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: secondgrpcservice-project2
+  name: secondgrpcservice-project2
+spec:
+  selector:
+    matchLabels:
+      app: secondgrpcservice-project2
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: secondgrpcservice-project2
+    spec:
+      containers:
+        - name: secondgrpcservice-project2
+          image: secondgrpcservice-project2
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 5288
+              name: merge-port
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: secondgrpcservice-project2
+  labels:
+    app: secondgrpcservice-project2
+spec:
+  selector:
+    app: secondgrpcservice-project2
+  ports:
+    - port: 50102
+      targetPort: merge-port

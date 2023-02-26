@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option csharp_namespace = "TemplateServer";
+
+package templates;
+
+// protoc -I . ppt-proto/greet.proto --go_out=plugins=grpc:.
+
+service TemplateMaker {
+  rpc RetrieveTemplate (TemplateRequest) returns (TemplateResponse);
+}
+
+message TemplateRequest {
+  string name = 1;
+}
+
+message TemplateResponse {
+  string message = 1;
+}

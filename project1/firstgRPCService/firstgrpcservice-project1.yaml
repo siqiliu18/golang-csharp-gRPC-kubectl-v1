@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: firstgrpcservice-project1
+  name: firstgrpcservice-project1
+spec:
+  selector:
+    matchLabels:
+      app: firstgrpcservice-project1
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: firstgrpcservice-project1
+    spec:
+      containers:
+        - name: firstgrpcservice-project1
+          image: firstgrpcservice-project1
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 5287
+              name: merge-port
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: firstgrpcservice-project1
+  labels:
+    app: firstgrpcservice-project1
+spec:
+  selector:
+    app: firstgrpcservice-project1
+  ports:
+    - port: 50101
+      name: grpc
+      targetPort: merge-port
