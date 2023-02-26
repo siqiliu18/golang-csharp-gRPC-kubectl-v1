@@ -14,3 +14,4 @@ golang client <- gRPC -> c# server
 5. https://learn.microsoft.com/en-us/aspnet/core/tutorials/grpc/grpc-start?view=aspnetcore-6.0&tabs=visual-studio-code
 6. https://learn.microsoft.com/en-us/dotnet/core/docker/build-container?tabs=windows
 7. https://learn.microsoft.com/en-us/aspnet/core/fundamentals/minimal-apis?view=aspnetcore-6.0
+8. https://medium.com/aspnetrun/using-grpc-in-microservices-for-building-a-high-performance-interservice-communication-with-net-5-11f3e5fa0e9d
