@@ -5,6 +5,11 @@ c# gRPC client and server
 
 ## Project 2
 golang client <- gRPC -> c# server
+1. create C# gRPC image: docker build -t secondgrpcservice-project2-serveronly -f Dockerfile .
+2. create C# gRPC service: kubectl create -f secondgRPCService-project2.yaml
+3. create Golang gRPC client: kubectl create -f goclient.yaml
+4. load proto into BloomRPC
+5. send request through 127.0.0.1:30008
 
 ## Useful Sources
 1. https://www.infoq.com/articles/getting-started-grpc-dotnet/
