@@ -1,7 +1,10 @@
 # golang-csharp-gRPC-kubectl-v1
 
 ## Project 1
-c# gRPC client and server
+c# gRPC client <-> server and client <-> server
+1. kubectl create -f secondgRPCService-project2.yaml
+2. kubectl create -f firstgrpcservice-project1.yaml
+3. kubectl create -f firstgrpcclient-project1.yaml
 
 ## Project 2
 golang client <- gRPC -> c# server

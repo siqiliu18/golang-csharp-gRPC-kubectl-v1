@@ -28,5 +28,7 @@ metadata:
 spec:
   selector:
     app: firstgrpcclient-project1
+  type: NodePort
   ports:
     - port: 50102
+      nodePort: 30112

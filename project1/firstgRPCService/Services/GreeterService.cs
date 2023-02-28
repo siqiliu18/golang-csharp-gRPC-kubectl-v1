@@ -12,7 +12,7 @@ public class GreeterService : Greeter.GreeterBase
     public GreeterService(ILogger<GreeterService> logger)
     {
         _logger = logger;
-        var channel = GrpcChannel.ForAddress("secondgrpcservice-project1:50102");
+        var channel = GrpcChannel.ForAddress("http://secondgrpcservice-project1:50102");
         _client = new QHDmocker.QHDmockerClient(channel);
     }
 
