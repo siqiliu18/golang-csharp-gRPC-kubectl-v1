@@ -31,7 +31,8 @@ metadata:
 spec:
   selector:
     app: firstgrpcservice-project1
+  type: NodePort
   ports:
     - port: 50101
-      name: grpc
+      nodePort: 30111
       targetPort: merge-port
