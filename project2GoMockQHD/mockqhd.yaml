@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pptp2-mockqhd-deployment
+  labels:
+    app: pptp2-mockqhd
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pptp2-mockqhd
+  template:
+    metadata:
+      labels:
+        app: pptp2-mockqhd
+    spec:
+      containers:
+      - name: pptp2-mockqhd-pod
+        image: pptp2-modkqhd-image
+        imagePullPolicy: Never
+        ports:
+          - containerPort: 50097
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name:  mockqhd-pptservice
+spec:
+  selector:
+    app:  pptp2-mockqhd
+  type: NodePort
+  ports:
+  - port:  7003
+    targetPort:  50097
+    nodePort: 30009

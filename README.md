@@ -15,3 +15,7 @@ golang client <- gRPC -> c# server
 6. https://learn.microsoft.com/en-us/dotnet/core/docker/build-container?tabs=windows
 7. https://learn.microsoft.com/en-us/aspnet/core/fundamentals/minimal-apis?view=aspnetcore-6.0
 8. https://medium.com/aspnetrun/using-grpc-in-microservices-for-building-a-high-performance-interservice-communication-with-net-5-11f3e5fa0e9d
+
+## Setup workspace for multiple modules in one repo
+1. https://github.com/golang/tools/blob/master/gopls/doc/workspace.md
+2. https://github.com/golang/vscode-go/issues/2132

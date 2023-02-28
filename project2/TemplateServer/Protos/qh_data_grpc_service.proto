@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option csharp_namespace = "QHDataService";
+
+package qh_data_service;
+
+service QHData {
+    rpc CallQIL(QILRequest) returns (QILResponse) {};
+}
+
+message QILRequest {
+    int64 qilID = 1;
+    int64 qilVersion = 2;
+}
+
+message QILResponse {
+    string data = 1;
+}

@@ -31,6 +31,8 @@ metadata:
 spec:
   selector:
     app: secondgrpcservice-project2
+  type: NodePort
   ports:
     - port: 50102
       targetPort: merge-port
+      nodePort: 30010

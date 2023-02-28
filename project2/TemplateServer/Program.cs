@@ -15,6 +15,11 @@ builder.WebHost.ConfigureKestrel(options =>
 // Add services to the container.
 builder.Services.AddGrpc();
 
+// builder.Services.AddGrpcClient<QHDataService.QHData.QHDataClient>(o =>
+// {
+//     o.Address = new Uri("http://mockqhd-pptservice:7003");
+// });
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
