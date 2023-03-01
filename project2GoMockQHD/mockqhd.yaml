@@ -28,8 +28,6 @@ metadata:
 spec:
   selector:
     app:  pptp2-mockqhd
-  type: NodePort
   ports:
-  - port:  7003
+  - port:  50103
     targetPort:  50097
-    nodePort: 30009

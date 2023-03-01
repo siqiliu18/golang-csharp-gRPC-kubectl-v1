@@ -5,6 +5,13 @@ c# gRPC client and server
 
 ## Project 2
 golang client <- gRPC -> c# server
+1. The 2 proto files have to be the same!
+2. create docker file for csharp server: docker build -t secondgrpcservice-project2-multi -f Dockerfile .
+3. create docker file for mock qhd server: docker build -t pptp2-modkqhd-image -f Dockerfile .
+4. launch services and pods
+5. use: var channel = GrpcChannel.ForAddress("http://mockqhd-pptservice:50103"); 
+6. assign to private _client = new QHData.QHDataClient(channel); that is belonged to default file
+7. call RPC function of mock qhd
 
 ## Useful Sources
 1. https://www.infoq.com/articles/getting-started-grpc-dotnet/

@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: secondgrpcservice-project2
-          image: secondgrpcservice-project2
+          image: secondgrpcservice-project2-multi
           imagePullPolicy: Never
           ports:
             - containerPort: 5288
