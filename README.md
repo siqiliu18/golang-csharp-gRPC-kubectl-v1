@@ -2,9 +2,15 @@
 
 ## Project 1
 c# gRPC client <-> server and client <-> server
-1. kubectl create -f secondgRPCService-project2.yaml
-2. kubectl create -f firstgrpcservice-project1.yaml
-3. kubectl create -f firstgrpcclient-project1.yaml
+1. use "GrpcChannel.ForAddress("http://secondgrpcservice-project1:50102")" to create a lower service channel within default created file
+2. In default file, create client object and call its rpc functions
+3. ------------
+4. Create QHDataService.cs and use it to call Mockqhd.QHDmocker.QHDmockerClient rpc function
+5. Switch to use AddScroped to add QHDataService and use AddGrpcClient to add Mockqhd.QHDmocker.QHDmockerClient in program.cs
+6. Mockqhd is the namespace that matches to package name in proto file, QHDmocker matches to service name
+7. kubectl create -f secondgRPCService-project2.yaml
+8. kubectl create -f firstgrpcservice-project1.yaml
+9. kubectl create -f firstgrpcclient-project1.yaml
 
 ## Project 2
 golang client <- gRPC -> c# server

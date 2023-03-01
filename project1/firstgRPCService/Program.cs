@@ -15,6 +15,12 @@ builder.WebHost.ConfigureKestrel(options =>
 // Add services to the container.
 builder.Services.AddGrpc();
 
+builder.Services.AddGrpcClient<Mockqhd.QHDmocker.QHDmockerClient>(o => 
+{
+    o.Address = new Uri("http://secondgrpcservice-project1:50102");
+});
+builder.Services.AddScoped<QHDataService>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
