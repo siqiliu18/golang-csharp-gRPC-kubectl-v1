@@ -1,2 +1,0 @@
-obj/Debug/net6.0/Protos/QhDataGrpcService.cs \
-obj/Debug/net6.0/Protos/QhDataGrpcServiceGrpc.cs: Protos/qh_data_grpc_service.proto
