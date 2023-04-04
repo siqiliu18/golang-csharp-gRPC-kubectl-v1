@@ -1,0 +1,8 @@
+language: csharp
+services:
+- docker
+mono: none
+dotnet: 6
+script:
+- dotnet build project2/TemplateServer/TemplateServer.csproj
+- docker build -f project2/TemplateServer/Dockerfile .
